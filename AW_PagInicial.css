@@ -16,7 +16,7 @@ body{
         rgb(0, 26, 15) 40%,
         rgb(0, 0, 0) 100%
     ),
-    url("/Fotos/cod8.png") 50% -200px / cover no-repeat;
+    url("cod8.png") 50% -200px / cover no-repeat;
 ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -509,3 +509,4 @@ nav{
         z-index: 3;
     }
 }
+
