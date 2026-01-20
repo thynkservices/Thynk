@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="AW_estiloGeral.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Momo+Trust+Display&family=Sekuya&display=swap"
+        rel="stylesheet">
+    <title>Thynk - Como usar</title>
+</head>
+
+<body>
+    <div class="mainDiv">
+        <div class="dec">
+
+            <div class="logoDiv">
+                <p class="logo">Y</p>
+            </div>
+
+            <button class="casa" onclick="home()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="casa" id="casa"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z" />
+                </svg>
+            </button>
+
+        </div>
+
+        <form class="siteConteudo" id="form">
+
+            <fieldset>
+                <legend class="titulo">Relatar um problema</legend>
+
+                <p class="conteudoTexto">Quer deixar sua opinião sobre o site, tirar dúvidas ou apenas contatar os desenvolvedores, utilize a ferramenta abaixo para enviar sua mensagem direto para o email dos desenvolvedores.</p>
+                <label for="nome" class="conteudoTexto">Nome:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    name="name"
+                    placeholder="Seu nome"
+                    required
+                    style="border-radius: 5px;
+                    background-color: #4da556;
+                    color: #02301e;
+                    border: none;
+                    padding: 5px;"
+                >
+
+                <label for="email" class="conteudoTexto">E-mail:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="seu@email.com"
+                    required
+                    style="border-radius: 5px;
+                    background-color: #4da556;
+                    color: #02301e;
+                    border: none;
+                    padding: 5px;"
+                >
+                <label for="relato" class="conteudoTexto">Descreva sua mensagem:</label>
+                <textarea
+                    id="relato"
+                    name="relato"
+                    rows="6"
+                    placeholder="Digite aqui sua mensagem..."
+                    required
+                    style=
+                    "border-radius: 5px;
+                    background-color: #4da556;
+                    color: #02301e;
+                    border: none;
+                    padding: 5px;
+                    outline: hidden;"
+                ></textarea>
+                <button type="submit" style="margin: 10px; border-radius: 5px; padding: 5px; border: none; background-color: #02301e; color: #b4f589;">Enviar</button>
+            </fieldset>
+
+        </form>
+    </div>
+
+    <script src="AW_interacaoGeral.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "ZVs-NUqaQVUwDCzaJ",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // these IDs from the previous steps
+                emailjs.sendForm('service_3z0fiqs', 'template_522btxg', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        this.submit();
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</body>
+
+</html>

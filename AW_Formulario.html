@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de prompt</title>
+    <link rel="stylesheet" href="AW_Formulario-copy.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Momo+Trust+Display&family=Sekuya&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: Cherry;
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="casaDiv"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="casa" id="casa"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M341.8 72.6C329.5 61.2 310.5 61.2 298.3 72.6L74.3 280.6C64.7 289.6 61.5 303.5 66.3 315.7C71.1 327.9 82.8 336 96 336L112 336L112 512C112 547.3 140.7 576 176 576L464 576C499.3 576 528 547.3 528 512L528 336L544 336C557.2 336 569 327.9 573.8 315.7C578.6 303.5 575.4 289.5 565.8 280.6L341.8 72.6zM304 384L336 384C362.5 384 384 405.5 384 432L384 528L256 528L256 432C256 405.5 277.5 384 304 384z"/></svg></div>
+    <div class="mainDiv" id="mainDiv">
+        <div class="siteNome">
+            <span class="nomeLetra">T</span>
+            <span class="nomeLetra">H</span>
+            <span class="nomeLetra">Y</span>
+            <span class="nomeLetra">N</span>
+            <span class="nomeLetra">K</span>
+        </div>
+
+        <div class="menuHamburguer" id="menuHamburguer">
+            <div class="linha1"></div>
+            <div class="linha2"></div>
+            <div class="linha3"></div>
+        </div>
+
+        <form id="form" class="formulario">
+
+            <div id="promptNaoGeradoDiv" class="promptNaoGeradoDiv">
+            <div class="promptNaoGeradoConteudo" id="promptNaoGeradoConteudo">
+                <button class="promptNaoGeradoConteudoSair" id="promptNaoGeradoConteudoSair" onclick="sair()" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg></button>
+                <div class="promptNaoGeradoConteudoTitulo">
+                    <h4 class="promptNaoGeradoTitulo">Gerando prompt</h4>
+                </div>
+
+                <div class="promptNaoGeradoTexto">
+
+                </div>
+
+                <div class="estilosBotoes">
+                    <button onclick="mudarTexto(1)" type="button">Estilo 1</button>
+                    <button onclick="mudarTexto(2)" type="button">Estilo 2</button>
+                    <button onclick="mudarTexto(3)" type="button">Estilo 3</button>
+                </div>
+
+                <div class="enviarBotaoDiv">
+                    <button class="enviarBotao" id="enviarBotao" type="submit" >Finalizar</button>
+                </div>
+            </div>
+        </div>
+
+            <div class="cb">
+                <fieldset>
+                    <legend>Informações de contato</legend>
+                    <div class="qb1">
+                        <label for="nome">Nome / Apelido</label>
+                        <input type="text" id="nome" name="name" class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+
+                    <div class="qb1">
+                        <label for="email">E-mail</label>
+                        <input type="text" id="email" name="email" class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                        <span id="erroArroba" class="erroArroba"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroArrobaLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>O email precisa ter "@"</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Componentes do Framework</legend>
+
+                    <div class="qb1">
+                        <label for='cr'>Capacidade e função</label>
+                        <input type='text' id='cr' name='cr' class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+                            
+                    <div class="qb1">
+                        <label for='i'>Contexto</label>
+                        <input type='text' id='i' name='i' class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+
+                    <div class="qb1">
+                        <label for='s'>Pedido</label>
+                        <input type='text' id='s' name='s' class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+                            
+                    <div class="qb1">
+                        <label for='p'>Personalidade</label>
+                        <input type='text' id='p' name='p' class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+
+                    <div class="qb1">
+                        <label for='e'>Experimento</label > 
+                        <input type='text' id='e' name='e' class="input">
+                        <span id="erro" class="erro"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="erroLogo"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path fill="rgb(228, 12, 12)" d="M320 576C178.6 576 64 461.4 64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576zM320 384C302.3 384 288 398.3 288 416C288 433.7 302.3 448 320 448C337.7 448 352 433.7 352 416C352 398.3 337.7 384 320 384zM320 192C301.8 192 287.3 207.5 288.6 225.7L296 329.7C296.9 342.3 307.4 352 319.9 352C332.5 352 342.9 342.3 343.8 329.7L351.2 225.7C352.5 207.5 338.1 192 319.8 192z"/></svg>Este campo é obrigatório</span>
+                    </div>
+                </fieldset>
+
+                <input type="hidden" id="promptHidden" name="prompt">
+
+            </div>
+
+            <div class="comecarDiv">
+                <button class="comecar" id="comecar" type="button">Gerar Prompt</button>
+            </div>
+        </form>
+    </div>
+    <script src="AW_Formulario.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init({
+              publicKey: "ZVs-NUqaQVUwDCzaJ",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                
+                const promptTexto = document.getElementById("promptGeradoPrompt").innerText;
+                document.getElementById("promptHidden").value = promptTexto;
+
+                // these IDs from the previous steps
+                emailjs.sendForm('service_3z0fiqs', 'template_3pvwlz9', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        this.submit();
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

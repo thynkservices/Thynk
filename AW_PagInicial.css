@@ -1,0 +1,507 @@
+/*principais*/
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    }
+
+
+body{
+    font-size: 0.9rem;
+    /*background: linear-gradient(to bottom, #085390, #01132a);*/
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(1, 23, 53, 0) 0%,
+        rgb(0, 26, 15) 40%,
+        rgb(0, 0, 0) 100%
+    ),
+    url("/Fotos/cod8.png") 50% -200px / cover no-repeat;
+;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+body.ativa{
+    overflow-y: hidden;
+}
+
+* {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.interfaceMain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    margin: 30px;
+}
+
+/* nav */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    height: 75px;
+    box-shadow: 2px 2px 2px RGBA(0, 0, 0, 0.2);
+    background: transparent;
+    align-items: center;
+}
+
+.navLista {
+    list-style: none;
+    display: flex;
+    transition: 0.3s ease-out;
+    font-size: 1rem;
+    padding: 30px;
+    gap: 30px;
+}
+
+.navLista.ativa {
+    transform: translateX(0);
+    box-shadow: -200px 0px 400px 150px rgba(0,0,0,0.6);
+    -webkit-box-shadow: -200px 0px 400px 150px rgba(0,0,0,0.6);
+    -moz-box-shadow: -200px 0px 400px 150px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+.navItem {
+    position: relative;
+}
+
+.navListaTitulo {
+    color: #4da556;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navListaOpcoesDiv {
+    position: absolute;
+    top: 100%;
+    left: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.5 ease;
+    background-color: #0f1a14;
+    border-radius: 6px;
+    z-index: 10;
+    opacity: 0;
+    width: 105%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navItem.ativo .navListaOpcoesDiv {
+    max-height: 300px;
+    opacity: 1;
+}
+
+.navListaOpcoes {
+    font-size: 0.7rem;
+    margin: 6px 0;
+}
+
+.navListaOpcoes a {
+    color: #cbedb8;
+    text-decoration: none;
+}
+
+.navListaSite {
+    margin: 20px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #d0e9c0;
+    font-size: 2rem;
+    display: none;
+}
+
+.setinha {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.navItem.ativo .setinha {
+    transform: rotate(180deg);
+}
+
+
+/*menu*/
+.menuHamburguer{
+    cursor: pointer;
+    display: none;
+    margin: 10px;
+    transition: 0.3s ease-out;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 26px;
+    margin: 15px;
+}
+
+.menuHamburguer div{
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 2px;
+    background-color: white;
+    transition: 0.5s ease;
+    z-index: 5;
+}
+
+.menuHamburguer .linha1{
+    top: 0;
+}
+
+.menuHamburguer .linha2{
+    top: 12px;
+}
+
+.menuHamburguer .linha3{
+    top: 24px;
+}
+
+.menuHamburguer.ativa{
+    transform: translateX(-50vw);
+    transition: 0.5 ease;
+}
+
+.menuHamburguer.ativa .linha1{
+    transform:  rotate(45deg);
+    top: 19px;
+}
+
+.menuHamburguer.ativa .linha2{
+    opacity: 0;
+}
+
+.menuHamburguer.ativa .linha3{
+    transform: rotate(-45deg);
+    top: 19px;
+}
+
+.motivacoes{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* logo */
+.logoDiv{
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px #4da556 solid;
+    box-shadow: 0px 0px 5px #1cd234;
+    border-radius: 100%;
+    height: auto;
+    width: auto;
+    background:
+        linear-gradient(#0d462b, #0d462b) padding-box,
+        linear-gradient(to top right, #4da556, #0d13af) border-box;
+}
+
+.logo{
+    color: transparent;
+    -webkit-background-clip: text;
+    background: linear-gradient(to top right, #4da556, #cbedb8);
+    background-clip: text;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    text-align: center;
+    text-shadow: 0px 0px 8px #4da556;
+    margin: 0;
+    line-height: 1.0;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+}
+
+/* conteudo primario */
+.texts{
+    text-align: center;
+    color: white;
+}
+
+.interfaceMain p{
+    margin: 0;
+}
+
+.interfaceMain .nomeLetra{
+    font-size: 2.5rem;
+    color: #4da556;
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 10px;
+    transition: ease 0.5s;
+    animation: movimentoCod 9s ease infinite alternate;
+    animation-play-state: paused;
+    filter: opacity(9px);
+}
+.siteNome{
+    margin: 10px;
+}
+.comecar{
+    margin: 30px;
+    height: 40px;
+    width: 135px;
+    box-shadow: 0px 0px 9px #1cd234;
+    font-size: larger;
+    border: none;
+    border-radius: 30px;
+    background: radial-gradient(circle, #d0e9c0, #4ada4a);
+    background-size: 200% 100%;
+    color: #17703c;
+    transition: all ease-in 0.1s;
+    animation: pulse 5s infinite alternate, comecarMov 3s infinite alternate;
+    
+}
+
+.comecar:hover{
+    color: white;
+}
+.nomeLetra:hover{
+    color: transparent;
+    background-image: url(/Fotos/cod7.png);
+    -webkit-background-clip: text;
+    background-size: 900% 900%;
+    background-clip: text;
+    background-image: cover;
+    transition: ease 0.5s;
+    animation-play-state: running;
+}
+
+/* motivacoes */
+.interfaceMain, .motivacoes{
+    display: flex;
+    flex-direction: column;
+}
+
+.anuncio{
+    background: transparent;
+    color: rgb(222, 244, 229);
+    height: auto;
+    border-radius: 10px;
+    flex: 1 0 250px;
+    max-width: 385.6px;
+    display:flex;
+    flex-direction: column;
+    border: 2px solid #4da556;
+}
+
+.anuncios{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    color: white;
+    justify-content: center;
+}
+
+.anuncioConteudo{
+    margin: 10px;
+    flex-grow: 1;
+}
+.motTitulo{
+    margin: 0;
+    text-align: center;
+}
+.anuncio p{
+    margin: 0;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.anuncioTitulo{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+.tituloImg{
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.tituloImg svg{
+    width: 20px;
+    height: 20px;
+    color: #cbedb8;
+}
+
+.temaIdeia, .temaPrompt{
+    margin: 0;
+}
+
+.temaIdeia{
+    color: #4da556;
+}
+.anuncioPar{
+    border: 2px solid #02301e;
+    border-radius: 5px;
+}
+
+.motTitulo{
+    color: white;
+    padding: 15px;
+}
+
+/* final */
+.creditos{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    color: #ffffff;
+}
+
+.devs :not(.devsTitulo), .plataforma :not(.plataformaTitulo){
+    font-size: small;
+}
+
+/*keyframes*/
+@keyframes movimentoCod {
+    0%{
+    background-position: 0% 0%; 
+}
+    100%{
+    background-position: 0% 60%;
+}
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0px 0px 7px #1cd234;
+    }
+    100%{
+        box-shadow: 0px 0px 13px #1cd234;
+    }
+}
+
+@keyframes comecarMov{
+    from{
+        background-position: 0% 50%;
+    }
+    to{
+        background-position: 100% 50%;
+    }
+}
+
+@media screen and (min-width: 476px){
+    .anuncios{
+        flex-direction: row;
+    }
+}
+
+@media screen and (max-width: 999px){
+    .navLista{
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 42vw;
+        height: 100vh;
+        background: #4da556;
+        flex-direction: column;
+        align-items: left;
+        transform: translateX(100%);
+        overflow-y: scroll;
+        z-index: 3;
+        margin: 0;
+    }
+    .navListaOpcoesDiv{
+        width: auto;
+    }
+
+    .navListaOpcoes, .navListaTitulo, .navListaOpcoesDiv{
+        position: static;
+        opacity: 1;
+        z-index: 5;
+    }
+
+    .navItem{
+        position: static;
+    }
+
+    .navItem .navListaOpcoesDiv{
+        max-height: 300px;
+        opacity: 1;
+        align-items: left;
+    }
+
+    .navListaOpcoesDiv{
+        background-color: transparent;
+        position: static;
+    }
+
+    .navListaOpcoes{
+        font-size: 1rem;
+        margin: 10px;
+        position: static;
+    }
+
+    .navListaSite{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .setinha{
+        display: none;
+    }
+
+    .menuHamburguer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navListaTitulo{
+        color: #14261d;
+        position:static;
+        opacity: 1;
+        border-bottom: 2px solid #14261d;
+    }
+    .menuHamburguer.ativa{
+        top: 0;
+        position: fixed;
+        z-index: 3;
+    }
+}

@@ -1,0 +1,139 @@
+/* parte primaria */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    }
+
+body{
+    font-family: "Alfa Slab One", serif;
+    background: linear-gradient(to bottom, #085390, #01132a);
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(1, 23, 53, 0) 0%,
+        rgb(0, 26, 15) 40%,
+        rgb(0, 0, 0) 100%
+    ),
+    url("/Fotos/cod8.png") 50% -700px / cover no-repeat #26a58b;
+;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+}
+
+.mainDiv{
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* parte secundaia */
+.dec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    background-color: #17703c;
+    align-items: center;
+}
+
+.siteConteudo{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.casa{
+    border: none;
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.titulo{
+    font-size: 2rem;
+    background-color: #4da556;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    color: #b4f589;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 30px;
+}
+
+.logoDiv{
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px #4da556 solid;
+    box-shadow: 0px 0px 5px #1cd234;
+    border-radius: 100%;
+    height: auto;
+    width: auto;
+    background:
+        linear-gradient(#0d462b, #0d462b) padding-box,
+        linear-gradient(to top right, #4da556, #0d13af) border-box;
+}
+
+.siteConteudo fieldset{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: transparent;
+    border: 2px solid #4da556;
+    max-width: 85vw;
+    flex-direction: column;
+    border-radius: 5px;
+    margin: 30px;
+    gap: 10px;
+}
+
+input::placeholder, textarea::placeholder{
+    color: #011e13;
+}
+
+/* parte tercuaeua */
+
+.conteudoTexto{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    font-size: 1rem;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 100;
+    color: #cbedb8;
+    border: 2px solid #02301e;
+    background-color: #011e13;
+    padding: 5px;
+    border-radius: 5px;
+}
+.casa{
+    margin: 10px;
+    color: #b4f589;
+}
+
+.logo{
+    color: transparent;
+    -webkit-background-clip: text;
+    background: linear-gradient(to top right, #4da556, #cbedb8);
+    background-clip: text;
+    width: 20px;
+    height: 20px;
+    padding: 8px;
+    text-align: center;
+    line-height: 0.7;
+    text-shadow: 0px 0px 8px #4da556;
+    margin: 0;
+    font-size: 2rem;
+    font-family: "Momo Trust Display", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}

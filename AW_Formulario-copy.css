@@ -1,0 +1,451 @@
+
+/*partes principais*/
+html, body {
+    margin: 0;
+    padding: 0;
+    }
+
+html{
+    height: 100vh;
+}
+
+body{
+    height: 100%;
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(1, 23, 53, 0) 0%,
+        rgb(0, 26, 22) 40%,
+        rgb(0, 0, 0) 100%
+    ),
+    url("/Fotos/cod8.png") 50% -180px / cover no-repeat #000000;
+;
+}
+
+body.ativo{
+    overflow: hidden;
+}
+
+* {
+  font-family: "Momo Trust Display", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cb{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.siteNome{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+/*areas d fieldset*/
+.erro, .erroArroba {
+    display: none;
+    gap: 3px;
+    color: rgb(228, 12, 12);
+    font-size: 0.7rem;
+    margin: 5px 0;
+    transition: ease 0.1s;
+}
+
+.erro.ativo, .erroArroba.ativo {
+  display: flex;
+  align-items: center;
+}
+
+input.invalido {
+  border: 2px solid rgb(228, 12, 12);
+}
+
+.erroLogo, .erroArrobaLogo{
+    width: 15px;
+    height: 15px;
+    display: none;
+}
+
+.erroLogo.ativo, .erroArrobaLogo.ativo{
+    display: flex;
+}
+
+input{
+    border-radius: 5px;
+    border: 2px solid #4da556;
+    color: #05241d;
+    outline: none;
+    transition: ease 0.1s;
+}
+
+.qb1{
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    gap: 10px;
+    border: 2px solid #4da556;
+    color: #4da556;
+    margin: 10px;
+}
+
+fieldset legend{
+    background-color: #4da556;
+    border-radius: 5px;
+    color: #05241d;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+label{
+    font-size: 1rem;
+    margin: 5px 0;
+}
+
+/* prompt gerado area */
+.promptNaoGeradoConteudo{
+    position: relative;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 455px;
+    height: auto;
+    background-color: #4da556;
+    transition: 0.4s ease;
+    border-radius: 5px;
+    gap: 10px;
+    overflow-y: scroll;
+    padding: 15px;
+    
+}
+
+.estilosBotoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.estilosBotoes button{
+    border: none;
+    background-color: #d0e9c0;
+    color: #05241d;
+    border-radius: 5px;
+}
+
+.promptNaoGeradoDiv{
+    inset: 0;
+    pointer-events: none;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.promptNaoGeradoConteudo.gerado{
+    opacity: 1;
+    overflow-y: scroll;
+    pointer-events: all;
+    box-shadow: 0px 0px 400px 20px rgba(0,0,0,1);
+    -webkit-box-shadow: 0px 0px 400px 20px rgba(0,0,0,1);
+    -moz-box-shadow: 0px 0px 400px 20px rgba(0,0,0,1);
+}
+
+.promptNaoGeradoConteudo.gerado .promptNaoGeradoDiv{
+    content: '';
+    width: 100vw;
+    height: 100vh;
+    filter: blur(50px);
+}
+
+.promptGeradoPergunta{
+    color: #d0e9c0;
+}
+
+.promptGeradoResposta{
+    color: #05241d
+}
+
+.promptNaoGeradoTitulo{
+    color: #05241d;
+    font-size: 2rem;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.promptGeradoConteudoDiv{
+    display: flex;
+    gap: 10px;
+}
+.promptGeradoPergunta, .promptGeradoResposta{
+    margin: 5px;
+}
+
+.promptNaoGeradoTitulo{
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.promptGeradoPrompt{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #4da556;
+    text-align: center;
+    background-color: #05241d;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: copy;
+}
+
+.enviarBotao{
+    border: none;
+    border-radius: 5px;
+    background-color: #05241d;
+    color: #d0e9c0;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.enviarBotaoDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.promptGeradoPrompt::before{
+    content: "Prompt gerado";
+    color: #d0e9c0;
+    padding: 5px;
+    border-bottom: 2px solid #d0e9c0;
+}
+.promptNaoGeradoConteudoSair{
+    border: none;
+    background: transparent;
+    fill: red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.promptNaoGeradoConteudoSair.ativo{
+    pointer-events: all;
+}
+
+.menuFechado{
+    display: none;
+}
+/* menu */
+.menuHamburguer{
+    cursor: pointer;
+    display: none;
+    margin: 10px;
+    transition: 0.3s ease-out;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 36px;
+    height: 26px;
+    margin: 15px;
+}
+
+.menuHamburguer div{
+    position: absolute;
+    right: 0;
+    width: 32px;
+    height: 2px;
+    background-color: white;
+    transition: 0.5s ease;
+    z-index: 5;
+}
+
+.menuHamburguer .linha1{
+    top: 0;
+}
+
+.menuHamburguer .linha2{
+    top: 12px;
+}
+
+.menuHamburguer .linha3{
+    top: 24px;
+}
+
+.menuHamburguer.ativa{
+    transform: translateX(-50vw);
+    transition: 0.5 ease;
+}
+
+.menuHamburguer.ativa .linha1{
+    transform:  rotate(45deg);
+    top: 19px;
+}
+
+.menuHamburguer.ativa .linha2{
+    opacity: 0;
+}
+
+.menuHamburguer.ativa .linha3{
+    transform: rotate(-45deg);
+    top: 19px;
+}
+
+.nomeLetra{
+    font-size: 2.5rem;
+    color: #4da556;
+    filter: drop-shadow(3px 3px 3px rgba(0,0,0,0.5));
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 10px;
+}
+.tituloMain{
+    text-align: center;
+    color: #eff0f5;
+    font-family: "Alfa Slab One", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #4da556;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #05241d;
+    font-size: 2.5rem;
+}
+
+/*botoes*/
+.suporteDiv, .abrirMenuDiv{
+    display: flex;
+    justify-content: right;
+}
+
+.suporte{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: none;
+    cursor:pointer;
+    text-align: center;
+    color: #05241d;
+    background-color: #17703c;
+    position: fixed;
+    margin: 20px;
+    font-size: 1.5rem;
+    bottom: 0;
+    padding: 10px;
+}
+
+.comecarDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.abrirMenu{
+    text-align: center;
+    border: none;
+    cursor:pointer;
+    background-color: #17703c;
+    color: #05241d;
+    position: fixed;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    border-radius: 2px;
+} 
+
+.casa{
+    fill: #4da556;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.comecar{
+    margin: 30px;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    box-shadow: 0px 0px 9px #1cd234;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: radial-gradient(circle, #d0e9c0, #4ada4a);
+    background-size: 200% 100%;
+    color: #17703c;
+    transition: all ease-in 0.1s;
+    animation: pulse 5s infinite alternate, comecarMov 3s infinite alternate;
+    
+}
+
+/* keyframes */
+@keyframes digitando{
+    0%{
+        width: 0;
+    }
+    100%{
+        width: 24.5;
+    }
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0px 0px 7px #1cd234;
+    }
+    100%{
+        box-shadow: 0px 0px 13px #1cd234;
+    }
+}
+
+@keyframes comecarMov{
+    from{
+        background-position: 0% 50%;
+    }
+    to{
+        background-position: 100% 50%;
+    }
+}
+
+/* condicoes p tela */
+@media screen and (min-width: 768px){
+    .formulario{
+        max-width: 670px;
+    }
+}
+
+
+
+
+
+
+
