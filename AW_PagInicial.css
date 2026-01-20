@@ -8,7 +8,6 @@ html, body {
 
 body{
     font-size: 0.9rem;
-    /*background: linear-gradient(to bottom, #085390, #01132a);*/
     background:
     linear-gradient(
         to bottom,
@@ -509,4 +508,5 @@ nav{
         z-index: 3;
     }
 }
+
 
