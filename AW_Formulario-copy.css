@@ -3,11 +3,9 @@
 html, body {
     margin: 0;
     padding: 0;
+    min-height: 100vh;
     }
 
-html{
-    height: 100vh;
-}
 
 body{
     height: 100%;
@@ -442,6 +440,7 @@ label{
         max-width: 670px;
     }
 }
+
 
 
 
