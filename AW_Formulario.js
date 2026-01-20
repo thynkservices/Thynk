@@ -150,8 +150,8 @@ function mudarTexto(estilo){
       const prompt = document.querySelector(".promptGeradoPrompt");
       const versoes = {
         1:`${i}. Considerando o contexto, atue como ${cr} para executar ${s} de forma ${p}. Quando apropriado, utilize ${e}, como exemplos.`,
-        2:`${i}. Dados o contexto anterior, assuma o papel de ${cr}. Sua tarefa é executar ${s} com uma personalidade ${p}. Sempre que apropriado, use ${e} como exemplos para maior clareza.`,
-        3:`${i}. No contexto apresnetado, você deve atuar como ${cr}, realizando as instruçôes de ${s}. Apresente isso de forma ${p} e recorra a exemplos, como ${e} quando isso ajudar na compreensão.`
+        2:`${i}. Dado o contexto anterior, assuma o papel de ${cr}. Sua tarefa é executar ${s} com uma personalidade ${p}. Sempre que apropriado, use ${e} como exemplos para maior clareza.`,
+        3:`${i}. No contexto apresentado, você deve atuar como ${cr}, realizando as instruçôes de ${s}. Apresente isso de forma ${p} e recorra a exemplos, como ${e} quando isso ajudar na compreensão.`
       };
 
       prompt.textContent = versoes[estilo];
@@ -167,5 +167,6 @@ const casa = document.getElementById("casa");
 casa.addEventListener("click", function(){
   window.location.href = "index.html";
 })
+
 
 
