@@ -165,6 +165,7 @@ function finalizar(){
 const casa = document.getElementById("casa");
 
 casa.addEventListener("click", function(){
-  window.location.href = "AW_PagInicial.html";
+  window.location.href = "index.html";
 })
+
 
