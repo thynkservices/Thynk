@@ -1,3 +1,4 @@
 function home(){
-    window.location.href = "/Interno/AW_PagInicial.html";
+    window.location.href = "index.html";
 }
+
