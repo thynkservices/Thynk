@@ -18,7 +18,7 @@ body{
         rgb(0, 26, 22) 40%,
         rgb(0, 0, 0) 100%
     ),
-    url("/Fotos/cod8.png") 50% -180px / cover no-repeat #000000;
+    url("cod8.png") 50% -180px / cover no-repeat #000000;
 ;
 }
 
@@ -442,6 +442,7 @@ label{
         max-width: 670px;
     }
 }
+
 
 
 
