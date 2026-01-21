@@ -263,10 +263,6 @@ nav{
     font-weight: 400;
     font-style: normal;
     letter-spacing: 10px;
-    transition: ease 0.5s;
-    animation: movimentoCod 9s ease infinite alternate;
-    animation-play-state: paused;
-    filter: opacity(9px);
 }
 .siteNome{
     margin: 10px;
@@ -499,5 +495,6 @@ nav{
         z-index: 3;
     }
 }
+
 
 
