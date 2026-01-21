@@ -289,16 +289,6 @@ nav{
 .comecar:hover{
     color: white;
 }
-.nomeLetra:hover{
-    color: transparent;
-    background-image: url(/Fotos/cod7.png);
-    -webkit-background-clip: text;
-    background-size: 900% 900%;
-    background-clip: text;
-    background-image: cover;
-    transition: ease 0.5s;
-    animation-play-state: running;
-}
 
 /* motivacoes */
 .interfaceMain, .motivacoes{
@@ -508,5 +498,6 @@ nav{
         z-index: 3;
     }
 }
+
 
 
