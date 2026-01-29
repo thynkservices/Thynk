@@ -187,9 +187,8 @@ nav{
 }
 
 .menuHamburguer.ativa{
-    transform: translateX(-60vw);
+    transform: translateX(-50vw);
     transition: 0.5 ease;
-    margin-right: 20px;
 }
 
 .menuHamburguer.ativa .linha1{
@@ -495,6 +494,7 @@ nav{
         z-index: 3;
     }
 }
+
 
 
 
